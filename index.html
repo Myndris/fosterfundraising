@@ -38,8 +38,8 @@
         }
 
         .rpg-box {
-            background-color: #1a1a24; /* Dark cavern background */
-            border: 4px solid #c5a059; /* Gold border */
+            background-color: #1a1a24; 
+            border: 4px solid #c5a059; 
             border-radius: 8px;
             padding: 1.5rem;
             margin-bottom: 2rem;
@@ -48,7 +48,7 @@
         }
         .rpg-text {
             font-family: 'Courier New', Courier, monospace;
-            color: #e0f2fe; /* Light blue text */
+            color: #e0f2fe; 
             font-size: 1.2rem;
             font-weight: bold;
         }
@@ -61,17 +61,22 @@
             50% { opacity: 0; }
         }
 
-        .image-container {
-            text-align: center;
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
             margin: 1.5rem 0;
-            padding: 10px;
+            padding: 15px;
             background-color: #4a3b32;
             border-radius: 8px;
         }
-        .image-container img {
-            max-width: 100%;
+        .image-gallery img {
+            width: 100%;
+            height: 100%;
             border-radius: 4px;
             border: 2px solid #c5a059;
+            object-fit: cover; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.4);
         }
 
         .progress-section {
@@ -79,7 +84,7 @@
             padding: 1.5rem;
             background-color: #fffdf7;
             border-radius: 8px;
-            border: 2px dashed #8b7355; /* Treasure map path border */
+            border: 2px dashed #8b7355; 
         }
         .progress-text {
             text-align: center;
@@ -96,7 +101,7 @@
             border: 2px solid #4a3b32;
         }
         .progress-bar {
-            background-color: #c5a059; /* Gold treasure color */
+            background-color: #c5a059; 
             background-image: linear-gradient(45deg, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
             background-size: 1rem 1rem;
             height: 100%;
@@ -147,9 +152,9 @@
             opacity: 0.9;
             transform: translateY(-2px);
         }
-        .btn-amazon { background-color: #b8860b; color: #fff; } /* Dark Gold */
-        .btn-walmart { background-color: #2f4f4f; } /* Dark Slate */
-        .btn-paypal { background-color: #8b0000; } /* Dark Red */
+        .btn-amazon { background-color: #b8860b; color: #fff; } 
+        .btn-walmart { background-color: #2f4f4f; } 
+        .btn-paypal { background-color: #8b0000; } 
 
         footer {
             text-align: center;
@@ -173,8 +178,11 @@
 
         <p>Things did not go exactly as planned when we got back from pride weekend. We recently discovered a mama cat had a litter of newborns inside our floorboards. We set out traps to grab her before touching the kittens, but it turns out she sneakily moved the babies right after we spotted them! However, while we had traps set for her, we ended up catching two kittens from a completely different neighborhood litter...</p>
 
-        <div class="image-container">
-            <img src="kittens.jpg" alt="The Captain and First Mate imprisoned for crimes they did not commit">
+        <div class="image-gallery">
+            <img src="Captain&FirstMate_1.jpg" alt="The Captain and First Mate imprisoned together">
+            <img src="Captain&FirstMate_2.jpg" alt="The Captain and First Mate resting">
+            <img src="TheCaptain.webpg" alt="Portrait of the fierce Captain">
+            <img src="TheFirstMate.jpg" alt="Portrait of the loyal First Mate">
         </div>
 
         <p>We are glad we could at least get two kittens indoors and safe to help manage the local exploding population. They are doing wonderfully and settling in. There are no emergencies, just some simple gunky eyes that need clearing up.</p>
@@ -224,7 +232,7 @@
         // RPG STORY
         // ==========================================
         const storyText = "*BZZT* ...Captain's Log... We were exploring the treacherous Caves of Immense Treasures and Adventures when we were captured! My First Mate and I are now stranded and imprisoned by strange hairless giants. We are safe, but we need provisions and healing potions to survive this ordeal...";
-        const typingSpeed = 25; // <--- samller number = faster, larger = slower
+        const typingSpeed = 25; 
 
         // ==========================================
         // AUTOMATIC CALCULATIONS & ANIMATIONS
