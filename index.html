@@ -3,43 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accidental Foster Kittens Fundraiser</title>
+    <title>Accidental Foster Kittens: A Pirate's Tale</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Georgia', serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #f9f4ef;
+            color: #3b2f2f;
+            background-color: #f4eacc;
             margin: 0;
             padding: 0;
+            background-image: radial-gradient(#dcb98a 1px, transparent 1px);
+            background-size: 20px 20px;
         }
         header {
-            background-color: #ffb7b2;
-            color: #fff;
+            background-color: #4a3b32;
+            color: #f4eacc;
             padding: 2rem 1rem;
             text-align: center;
+            border-bottom: 5px solid #8b7355;
         }
         header h1 {
             margin: 0;
             font-size: 2.5rem;
+            text-shadow: 2px 2px #000;
         }
         .container {
             max-width: 800px;
             margin: 2rem auto;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            background: #fffdf7;
+            border-radius: 4px;
+            border: 2px solid #8b7355;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
             padding: 2rem;
         }
-        .cost-breakdown {
-            background-color: #e2f0cb;
-            padding: 1.5rem;
+
+        .rpg-box {
+            background-color: #1a1a24; /* Dark cavern background */
+            border: 4px solid #c5a059; /* Gold border */
             border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            min-height: 80px;
+            box-shadow: inset 0 0 10px #000;
+        }
+        .rpg-text {
+            font-family: 'Courier New', Courier, monospace;
+            color: #e0f2fe; /* Light blue text */
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .cursor {
+            color: #c5a059;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .image-container {
+            text-align: center;
+            margin: 1.5rem 0;
+            padding: 10px;
+            background-color: #4a3b32;
+            border-radius: 8px;
+        }
+        .image-container img {
+            max-width: 100%;
+            border-radius: 4px;
+            border: 2px solid #c5a059;
+        }
+
+        .progress-section {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background-color: #fffdf7;
+            border-radius: 8px;
+            border: 2px dashed #8b7355; /* Treasure map path border */
+        }
+        .progress-text {
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #4a3b32;
+        }
+        .progress-container {
+            background-color: #3b2f2f;
+            border-radius: 4px;
+            height: 28px;
+            overflow: hidden;
+            border: 2px solid #4a3b32;
+        }
+        .progress-bar {
+            background-color: #c5a059; /* Gold treasure color */
+            background-image: linear-gradient(45deg, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
+            background-size: 1rem 1rem;
+            height: 100%;
+            transition: width 0.5s ease;
+        }
+
+        .cost-breakdown {
+            background-color: #f3ebdb;
+            padding: 1.5rem;
+            border-radius: 4px;
+            border-left: 5px solid #8b7355;
             margin: 1.5rem 0;
         }
         .cost-breakdown h2 {
             margin-top: 0;
-            color: #2c5e1a;
+            color: #4a3b32;
         }
         .cost-breakdown ul {
             list-style-type: none;
@@ -49,6 +122,8 @@
             margin-bottom: 0.5rem;
             font-size: 1.1rem;
         }
+
+        /* --- Buttons --- */
         .buttons {
             display: flex;
             gap: 1rem;
@@ -60,42 +135,61 @@
             padding: 12px 20px;
             color: white;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 4px;
             font-weight: bold;
             text-align: center;
             flex: 1;
             min-width: 150px;
-            transition: opacity 0.3s ease;
+            transition: transform 0.2s ease, opacity 0.3s ease;
+            border: 2px solid #3b2f2f;
         }
         .btn:hover {
-            opacity: 0.8;
+            opacity: 0.9;
+            transform: translateY(-2px);
         }
-        .btn-amazon { background-color: #ff9900; color: #000; }
-        .btn-walmart { background-color: #0071ce; }
-        .btn-paypal { background-color: #00457c; }
+        .btn-amazon { background-color: #b8860b; color: #fff; } /* Dark Gold */
+        .btn-walmart { background-color: #2f4f4f; } /* Dark Slate */
+        .btn-paypal { background-color: #8b0000; } /* Dark Red */
+
         footer {
             text-align: center;
             margin-top: 2rem;
             padding-bottom: 2rem;
             font-size: 0.9rem;
-            color: #777;
+            color: #555;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Accidental Foster Kittens</h1>
+        <h1>The Floorboard Pirates</h1>
     </header>
-    
+
     <div class="container">
-        <p>Things did not go exactly as planned when we got back from pride weekend. We recently discovered a mama cat had a litter of newborns inside our floorboards. We set out traps to grab her before touching the kittens, but it turns out she sneakily moved the babies right after we spotted them! However, while we had traps set for her, we ended up catching two kittens from a completely different neighborhood litter.</p>
-        
-        <p>I am glad we could at least get two kittens indoors and safe to help manage the local exploding population. They are doing wonderfully and settling in. There are no emergencies, just some simple gunky eyes that need clearing up.</p>
-        
-        <p>I am raising a few funds to cover their vet appointment tomorrow, Thursday, July 9, to get them started on the right foot.</p>
+
+        <div class="rpg-box">
+            <span class="rpg-text" id="typewriterText"></span><span class="cursor">_</span>
+        </div>
+
+        <p>Things did not go exactly as planned when we got back from pride weekend. We recently discovered a mama cat had a litter of newborns inside our floorboards. We set out traps to grab her before touching the kittens, but it turns out she sneakily moved the babies right after we spotted them! However, while we had traps set for her, we ended up catching two kittens from a completely different neighborhood litter...</p>
+
+        <div class="image-container">
+            <img src="kittens.jpg" alt="The Captain and First Mate imprisoned for crimes they did not commit">
+        </div>
+
+        <p>We are glad we could at least get two kittens indoors and safe to help manage the local exploding population. They are doing wonderfully and settling in. There are no emergencies, just some simple gunky eyes that need clearing up.</p>
+
+        <p>We are raising a few funds to cover their vet appointment tomorrow, Thursday, July 9, to get them started on the right foot.</p>
+
+        <div class="progress-section">
+            <div class="progress-text" id="progressText"></div>
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar" style="width: 0%; max-width: 100%;"></div>
+            </div>
+        </div>
 
         <div class="cost-breakdown">
-            <h2>Tomorrow's Vet Visit Breakdown</h2>
+            <h2>Tomorrow's Voyage Breakdown</h2>
             <ul>
                 <li><strong>$65:</strong> Vet office visit</li>
                 <li><strong>$90:</strong> Prescription eye medication</li>
@@ -103,22 +197,59 @@
             </ul>
         </div>
 
-        <p>If you want to contribute, please message me on discord @avidra. I will send you regular updates and pictures of them growing, healing, and using any supplies you send. Even if you just want to see the pictures without donating, let me know.</p>
+        <p>If you want to join our crew and help out, please message me @ avidra on discord. I will send you regular updates and pictures of them growing, healing, and using any supplies you send. Even if you just want to see the pictures without donating, let me know.</p>
 
         <p>Any amount helps immensely. Thank you.</p>
 
-        <h2>Ways to help:</h2>
-        <p><em>Money is currently being put towards covering the July 9 vet visit and flea treatment. Future expected and ongoing vet expenses will include continued flea treatment, de-worming, basic vaccines, and spay/neuter procedures.</em></p>
-        
+        <h2>Ways to share your treasure:</h2>
         <div class="buttons">
             <a href="https://www.amazon.com/hz/wishlist/ls/1NG3A1NNZS1ES?ref_=wl_share" target="_blank" class="btn btn-amazon">Amazon Wishlist</a>
-            <a href="https://www.walmart.com/lists/shared/WL/043fdf60-6c82-4dad-a00f-8c24e09a3ead" target="_blank" class="btn btn-walmart">Walmart Registry</a>
+            <a href="https://www.walmart.com/lists/shared/WL/043fdf60-6c82-4dad-a00f-8c24e09a3ead" target="_blank" class="btn btn-walmart">Walmart List</a>
             <a href="https://www.paypal.com/donate/?business=TFVAH23PNA3AA&no_recurring=0&item_name=Thank+you+for+your+support!+<3&currency_code=USD" target="_blank" class="btn btn-paypal">Donate via PayPal</a>
         </div>
+        <p><em>Treasure is currently being put towards covering the July 9 vet visit and flea treatment. Future expected and ongoing vet expenses will include continued flea treatment, de-worming, basic vaccines, and spay/neuter procedures.</em></p>
     </div>
 
     <footer>
-        <p>&copy; 2026 Accidental Foster Kittens Fundraiser</p>
     </footer>
+
+    <script>
+        // ==========================================
+        // UPDATE DONATIONS
+        // ==========================================
+        const currentFunds = 0;
+        const goalAmount = 215;
+
+        // ==========================================
+        // RPG STORY
+        // ==========================================
+        const storyText = "*BZZT* ...Captain's Log... We were exploring the treacherous Caves of Immense Treasures and Adventures when we were captured! My First Mate and I are now stranded and imprisoned by strange hairless giants. We are safe, but we need provisions and healing potions to survive this ordeal...";
+        const typingSpeed = 25; // <--- samller number = faster, larger = slower
+
+        // ==========================================
+        // AUTOMATIC CALCULATIONS & ANIMATIONS
+        // ==========================================
+
+        // Progress Bar
+        const progressTextElement = document.getElementById('progressText');
+        const progressBarElement = document.getElementById('progressBar');
+        progressTextElement.innerText = 'Treasure Recovered: $' + currentFunds + ' / $' + goalAmount + ' Goal!';
+        const percentage = (currentFunds / goalAmount) * 100;
+        progressBarElement.style.width = percentage + '%';
+
+        // Typewriter Effect
+        let currentCharacterIndex = 0;
+        function typeWriter() {
+            if (currentCharacterIndex < storyText.length) {
+                document.getElementById("typewriterText").innerHTML += storyText.charAt(currentCharacterIndex);
+                currentCharacterIndex++;
+                setTimeout(typeWriter, typingSpeed);
+            }
+        }
+        // Start the typing effect as soon as the page loads
+        window.onload = function() {
+            typeWriter();
+        };
+    </script>
 </body>
 </html>
